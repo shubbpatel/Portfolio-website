@@ -7,7 +7,7 @@ export const CarouselContainer = styled.ul`
   padding: 0rem;
   list-style:none;
   display: flex;
-  justify-content: space-between; 
+  justify-content: flex-start;
   /* overflow-x: hidden; */
 
   margin-left: 32px;
@@ -24,8 +24,10 @@ export const CarouselContainer = styled.ul`
    }
 
   @media ${props => props.theme.breakpoints.sm} {
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
+    // overflow-x: scroll;
+    // -webkit-overflow-scrolling: touch;
+    flex-direction:column;
+    // justify-content:space-around;
     scroll-snap-type: x mandatory;
     touch-action: pan-x;
     justify-content: initial;
@@ -33,8 +35,18 @@ export const CarouselContainer = styled.ul`
   }
 `
 export const CarouselMobileScrollNode = styled.div`
+
+// color:linear-gradient(121.57deg, #FFFFFF 10%, rgba(255, 255, 255, 0.66) 30.15%);
+// color:rgba(255, 255, 255, 0.66);
+// -webkit-text-fill-color: transparent;
+margin-right:19rem;
+
+
   @media ${props => props.theme.breakpoints.sm} {
     display: flex;
+    margin-top:2rem;
+    margin-bottom:2rem;
+    margin-left:4.5rem;
     min-width: ${({ final }) => final ? `120%;` : `min-content`}
   }
 `
@@ -151,4 +163,7 @@ export const CarouselButtonDot = styled.div`
   margin: auto;
   width: 3px;
   height: 3px;
+`
+export const Div = styled.div`
+color:red;
 `
